@@ -1,23 +1,23 @@
 import java.util.Scanner;
 
 public class Tugas {
-    private static Scanner penginput = new Scanner(System.in);
+    private static final Scanner penginput = new Scanner(System.in);
 
     public static void main(String[] args) {
         while (true) {
-            System.out.println("Pilih Login:\n1. Admin\n2. Mahasiswa\nMasukkan Pilihan:");
+            System.out.println("Pilih Login:\n1. Admin\n2. Mahasiswa\n3.keluar\nMasukkan Pilihan:");
             int pilihan = penginput.nextInt();
             penginput.nextLine(); 
             switch (pilihan) {
-                case 1:
-                    admin();
-                    break;
-                case 2:
-                    mahasiswa();
-                    break;
-                default:
-                    System.out.println("Pilihan tidak valid.");
-                    break;
+                case 1 -> admin();
+                case 2 -> mahasiswa();
+                case 3 -> {
+                    System.out.println("Terima kasih, program berhenti.");
+                    System.exit(0);
+                }
+                
+                
+                default -> System.out.println("Pilihan tidak valid.");
             }
         }
     }
@@ -28,7 +28,7 @@ public class Tugas {
         System.out.println("Masukkan Password: ");
         String passwordAdmin = penginput.nextLine();
 
-        if (usernameAdmin.equals("admin477") && passwordAdmin.equals("password477")) {
+        if (usernameAdmin.equals("admin456") && passwordAdmin.equals("password456")){
             System.out.println("Login Admin Berhasil!");
         } else {
             System.out.println("Login gagal! Username atau password salah.");
